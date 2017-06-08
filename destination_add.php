@@ -19,7 +19,6 @@
     Spletna stran: <input type="text" name="www" /><br />
     Langitude: <input type="text" name="lat" /><br />
     Longitude: <input type="text" name="alt" /><br />
-    Video (link): <input type="text" name="link" /> <br />
     <input type="submit" value="Vnesi" />
     <input type="reset" value="Prekliči" />
 </form>
