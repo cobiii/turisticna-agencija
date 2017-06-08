@@ -64,7 +64,20 @@
         }
     ?>
     
-    
+    <div class="videoGallery">
+    <?php 
+        if ($_SESSION['admin'] == 1) {
+    ?>
+    <form action="video_insert.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo $id; ?>" />
+        Napis: <input type="text" name="title" /><br />
+        video: <input type="text" name="url" /><br />
+        <input type="submit" value="Dodaj video" />
+    </form>
+    <hr />
+    <?php 
+        }
+    ?>
     
     <?php
         $query = "SELECT * FROM pictures
