@@ -123,6 +123,19 @@ INSERT INTO `pictures` (`id`, `destionation_id`, `url`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktura tabele `pictures`
+--
+
+CREATE TABLE IF NOT EXISTS `videos` (
+`id` int(11) NOT NULL,
+  `destionation_id` int(11) NOT NULL,
+  `url` varchar(200) COLLATE utf8_slovenian_ci NOT NULL,
+  `title` varchar(200) COLLATE utf8_slovenian_ci NOT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_slovenian_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabele `rates`
 --
 
