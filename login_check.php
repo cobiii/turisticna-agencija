@@ -21,6 +21,7 @@
         $user = mysqli_fetch_array($result);
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['first_name'] = $user['first_name'];
+        $_SESSION['email'] = $user['email'];
         $_SESSION['last_name'] = $user['last_name'];
         $_SESSION['admin'] = $user['admin'];
         //preusmeritev na domov (index)

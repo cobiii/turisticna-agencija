@@ -56,7 +56,7 @@
                                             else {
                                                 
                                                 echo '<li><a href="logout.php">Odjava ('.
-                                                        $_SESSION['first_name'].' )</a></li>';
+                                                $_SESSION['first_name'].' )</a></li>';
                                             }
                                         ?>
 					                                   
@@ -104,7 +104,7 @@
 
 							<!-- Features -->
 								<section class="box features">
-									<h2 class="major"><span>Destinacije</span></h2>
+				
 									<div>
                                                                             <?php 
                                                                                 //preverimo za error
