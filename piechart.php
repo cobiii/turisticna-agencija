@@ -2,7 +2,7 @@
   <head>
       <?php
       include 'database.php';
-      include 'session.php';
+      include_once 'session.php';
 
        $query="SELECT d.title,count(v.user_id) as num FROM vacations v inner join destinations d on d.id=v.destination_id group by title ORDER BY num DESC";
        
@@ -29,7 +29,7 @@
     ]);
 
         var options = {
-          title: 'Priljubljene destinacije'
+          title: ''
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -39,6 +39,6 @@
     </script>
   </head>
   <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div id="piechart" style="width: 600px; height: 300px;"></div>
   </body>
 </html>

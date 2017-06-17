@@ -127,6 +127,10 @@
 	{
 		margin-bottom: 3em;
 	}
+        p#vvv, p#bbb{
+                margin-bottom: 10px;
+                color: black !important;
+        }
 	
 	/* Section/Article */
 	
