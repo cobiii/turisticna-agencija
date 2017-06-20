@@ -47,8 +47,7 @@
 				<ul>
 					<li class="current"><a href="index.php">Domov</a></li>	
                                         <li><a href="countries.php">Države</a></li>
-                                        <li><a href="destinations.php">Destinacije</a></li>
-                                        <li><a href="agency.php">Agencije</a></li>	
+                                        <li><a href="destinations.php">Destinacije</a></li>					
                                         <?php 
                                             if (!isset($_SESSION['user_id'])) {
                                                 echo '<li><a href="login.php">Prijava</a></li>';
@@ -57,7 +56,7 @@
                                             else {
                                                 
                                                 echo '<li><a href="logout.php">Odjava ('.
-                                                $_SESSION['first_name'].' )</a></li>';
+                                                        $_SESSION['first_name'].' )</a></li>';
                                             }
                                         ?>
 					                                   
@@ -77,41 +76,35 @@
 		<!-- Main -->
 			<div id="main-wrapper">
 				<div id="main" class="container">
-                                <?php 
-                                
-                                include 'database.php';
-                                
-                                $sql = "SELECT opis FROM komentarji;";
-                                
-                                $rezultat = mysqli_query($link,$sql);
-                                
-                                echo '<table>';
-                                
-                                while($row = mysqli_fetch_array($rezultat))
-                                {
-                                    
-                                    echo '<tr><th>Komentar</th></tr>';
-                                    
-                                    echo '<tr><td>'.$row['opis'].'</td></tr>';
-                                   
-                                }
-                                
-                                echo '</table>';
-                                
-                                ?>
-                                 
-                                    <form action="vnos_komentarja.php" method="POST" >
-                                        <input type="text" id="text" name="komentar" value="" placeholder="Vnesi komentar">
-                                        <input type="submit" value="Vnesi">
-                                    </form>
-                                </div>
-                        </div>
+					<!--<div class="row 200%">
+						<div class="12u">
+							
+							<!-- Highlight 
+								<section class="box highlight">
+									<ul class="special">
+										<li><a href="#" class="icon fa-search"><span class="label">Magnifier</span></a></li>
+										<li><a href="#" class="icon fa-tablet"><span class="label">Tablet</span></a></li>
+										<li><a href="#" class="icon fa-flask"><span class="label">Flask</span></a></li>
+										<li><a href="#" class="icon fa-cog"><span class="label">Cog?</span></a></li>
+									</ul>
+									<header>
+										<h2>A random assortment of icons in circles</h2>
+										<p>And some text that attempts to explain their significance</p>
+									</header>
+									<p>
+										Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu<br />
+										ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
+									</p>
+								</section>
+
+						</div>
+					</div>-->
 					<div class="row 200%">
 						<div class="12u">
 
 							<!-- Features -->
 								<section class="box features">
-				
+									<h2 class="major"><span>Destinacije</span></h2>
 									<div>
                                                                             <?php 
                                                                                 //preverimo za error
