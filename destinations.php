@@ -2,9 +2,11 @@
 include_once 'header.php';
 include_once 'database.php';
 $query = "SELECT d.title AS dtitle, d.id AS did, 
-          c.title AS ctitle, c.short
+          c.title AS ctitle, c.short, a.Ime AS aime
           FROM destinations d INNER JOIN countries c 
-          ON c.id=d.country_id";
+          ON c.id=d.country_id 
+          INNER JOIN destinations_agency da ON d.id = da.destinations_id
+          INNER JOIN agency a ON a.id = da.agency_id ";
 $result = mysqli_query($link, $query);
 ?>
 <?php 
@@ -39,6 +41,7 @@ while ($row = mysqli_fetch_array($result)) {
             echo '<img src="'.$picture['url'].'" alt="" />';
         }        
         echo '</a>';
+        echo '<spam>'.$row['aime'].'</span>';
         echo '<span class="destination_name">'.$row['dtitle'].'</span>';
         echo '<span class="destination_country">'.$row['short'].'</span>';
     echo '</div>';    
