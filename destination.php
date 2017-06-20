@@ -64,7 +64,20 @@
         }
     ?>
     
-    
+    <div class="videoGallery">
+    <?php 
+        if ($_SESSION['admin'] == 1) {
+    ?>
+    <form action="video_insert.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo $id; ?>" />
+        Napis: <input type="text" name="title" /><br />
+        video: <input type="text" name="url" /><br />
+        <input type="submit" value="Dodaj video" />
+    </form>
+    <hr />
+    <?php 
+        }
+    ?>
     
     <?php
         $query = "SELECT * FROM pictures
@@ -114,6 +127,30 @@ window.onload = loadScript;
 </script>
 <div id="googleMap" style="width:500px;height:500px;"></div>
 
+<form action="destination_form.php" method="post">
+    <input type="hidden" name="destination_id"
+               value="<?php echo $id; ?>" />
+        <input type="submit" value="Prijavi se" />
+    </form>
+<?php
+$user=$_SESSION['user_id'];
+$query="select user_id from destinations where id=$id and user_id=$user";
+$result=  mysqli_query($link, $query);
+$count=  mysqli_num_rows($result);
+if($count==1){ ?>
+<form action="destination_signed.php" method="post">
+    <input type="hidden" name="destination_id"
+               value="<?php echo $id; ?>" />
+        <input type="submit" value="Prijavljeni uporabniki" />
+    </form>
+<?php }
+ else{ ?>
+<form action="destination_questionta.php" method="post">
+    <input type="hidden" name="destination_id"
+               value="<?php echo $id; ?>" />
+        <input type="submit" value="Vprašanje" />
+    </form>
+<?php } ?>
 <div class="comments">
     <h2>Komentarji</h2>
     <form action="comment_insert.php" method="post">
